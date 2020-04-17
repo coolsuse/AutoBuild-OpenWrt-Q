@@ -9,7 +9,6 @@ name: Openwrt_Build_x86_64
 on: 
   release:
     types: [published]
-   #20200418
    push:
     branches: 
       - master
