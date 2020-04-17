@@ -12,8 +12,8 @@ on:
   # push:
   #  branches: 
   #    - master
-  schedule:
-    - cron: 0 0 */11 * *
+  # schedule:
+  #  - cron: 0 0 */11 * *
   watch:
     types: [started]
 
@@ -53,11 +53,11 @@ jobs:
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
-       # git clone https://github.com/superstarfly/openwrt-package package/lienol
-       # git clone https://github.com/vernesong/OpenClash package/openclash
+        git clone https://github.com/superstarfly/openwrt-package package/lienol
+        git clone https://github.com/vernesong/OpenClash package/openclash
         git clone https://github.com/jefferymvp/luci-app-koolproxyR package/koolproxyR
-       # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/adguardhome
-       # git clone https://github.com/frainzy1477/luci-app-clash package/clash
+        git clone https://github.com/rufengsuixing/luci-app-adguardhome package/adguardhome
+        git clone https://github.com/frainzy1477/luci-app-clash package/clash
         git clone https://github.com/fw876/helloworld package/ssrplus
        # git clone 其他github插件源码地址 package/文件夹名称  
         
@@ -73,8 +73,8 @@ jobs:
     # 复制 SSH 连接命令粘贴到终端内执行，或者复制链接在浏览器中打开使用网页终端。（网页终端可能会遇到黑屏的情况，按 Ctrl + C 即可）
     # 然后输入cd openwrt && make menuconfig
     # 完成后按快捷键Ctrl+D或执行exit命令退出，后续编译工作将自动进行。
-    - name: SSH connection to Actions
-      uses: superstarfly/debugger-action@master
+    # - name: SSH connection to Actions
+    #   uses: superstarfly/debugger-action@master
        
     - name: Download package
       working-directory: ./openwrt
